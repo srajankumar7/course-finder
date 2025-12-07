@@ -1,23 +1,15 @@
-// ./src/components/SearchBar.jsx
-
 function SearchBar({ searchTerm, setSearchTerm }) {
-
-  const handleChange = (event) => {
-    // Calls the function passed down from App.jsx to update the state
-    setSearchTerm(event.target.value);
-  };
-
   return (
     <div className="search-bar">
       <input
+        className="search-input"
         type="text"
         placeholder="Search courses by title or category..."
         value={searchTerm}
-        onChange={handleChange}
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
     </div>
   );
 }
 
-// ✅ This line correctly exports the component for App.jsx
 export default SearchBar;
